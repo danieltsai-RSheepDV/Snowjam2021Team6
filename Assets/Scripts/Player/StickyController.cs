@@ -14,16 +14,16 @@ public class StickyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision other)
     {
-        if (collision.transform.CompareTag("Object"))
+        if (other.transform.CompareTag("Object"))
         {
-            Destroy(collision.rigidbody);
-            Destroy(collision.collider);
-            collision.transform.parent = transform;
+            Destroy(other.rigidbody);
+            Destroy(other.collider);
+            other.transform.parent = transform;
         }
     }
 }
