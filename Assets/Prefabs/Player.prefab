@@ -621,7 +621,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3887168725208840802
 GameObject:
@@ -675,7 +675,7 @@ MonoBehaviour:
   model: {fileID: 2941509306874744695}
   maxShootPower: 100
   minShootPower: 0
-  growthRate: 1
+  growthRate: 0.1
 --- !u!114 &759799703172089767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,3 +734,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa2da23602b81f40b02b9a81e2c3afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 2941509306874744695}
