@@ -154,4 +154,9 @@ public class PlayerController : MonoBehaviour
         Debug.Log(tVol);
         volume = tVol < 1f ? 1f : tVol;
     }
+
+    public SnowballSize getSnowballSize()
+    {
+        return snowballSize;
+    }
 }
