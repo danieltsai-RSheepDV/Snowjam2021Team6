@@ -89,12 +89,13 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.high-definition-config": {
-      "version": "file:C:\\Users\\RSheep\\Documents\\GitHub\\Snowjam2021Team6\\LocalPackages\\com.unity.render-pipelines.high-definition-config",
-      "depth": 0,
-      "source": "local",
+      "version": "10.7.0",
+      "depth": 1,
+      "source": "registry",
       "dependencies": {
         "com.unity.render-pipelines.core": "10.7.0"
-      }
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.searcher": {
       "version": "4.3.2",
