@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Object
   - Collectible
+  - Ground
   layers:
   - Default
   - TransparentFX
