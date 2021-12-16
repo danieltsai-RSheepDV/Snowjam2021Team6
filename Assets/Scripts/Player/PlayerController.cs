@@ -66,8 +66,6 @@ public class PlayerController : MonoBehaviour
         {
             snowballSize = SnowballSize.SMALL;
         }
-        
-        if(rb.velocity.magnitude < 1) rb.velocity = Vector3.zero;
     }
 
     //Events

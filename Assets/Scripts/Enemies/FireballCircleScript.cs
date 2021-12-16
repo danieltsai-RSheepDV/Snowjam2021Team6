@@ -43,12 +43,12 @@ public class FireballCircleScript : MonoBehaviour
     // Move the ball
     void Update()
     {
-        float timeElapsed = Time.time - startTime;
+        /**float timeElapsed = Time.time - startTime;
         Vector3 pos = gameObject.transform.position;
         rb.velocity = new Vector3(10f*Mathf.Sin(timeElapsed / 3f), 8f*Mathf.Sin(timeElapsed / 0.5f), 10f*Mathf.Cos(timeElapsed / 3f));
         if (pos.y < 2.5f) {
             pos = new Vector3(pos.x, 2.5f, pos.z);
             gameObject.transform.position = pos;
-        }
+        }**/
     }
 }
