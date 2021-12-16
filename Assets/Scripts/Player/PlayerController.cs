@@ -78,6 +78,9 @@ public class PlayerController : MonoBehaviour
         {
             volume += growthRate * Time.deltaTime * rb.velocity.magnitude;
             model.transform.localScale = Vector3.one * volumeToRadius(volume);
+
+            vcam.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance =
+                model.transform.localScale.x * 20;
         }
     }
 
