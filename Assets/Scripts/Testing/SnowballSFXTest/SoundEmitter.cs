@@ -6,14 +6,17 @@ namespace SnowballSFXTest
 {
     public class SoundEmitter : MonoBehaviour
     {
+        float speed = 0;
+
         FMODUnity.StudioEventEmitter rollingSFXEmitter;
         FMODUnity.StudioEventEmitter windSFXEmitter;
-        float speed;
+        FMODUnity.StudioEventEmitter hitSFXEmitter;
 
         void Awake()
         {
             rollingSFXEmitter = transform.Find("Rolling SFX").GetComponent<FMODUnity.StudioEventEmitter>();
             windSFXEmitter = transform.Find("Wind SFX").GetComponent<FMODUnity.StudioEventEmitter>();
+            hitSFXEmitter = transform.Find("Hit SFX").GetComponent<FMODUnity.StudioEventEmitter>();
         }
 
         public void ChangeSpeed(float speed)
@@ -34,6 +37,11 @@ namespace SnowballSFXTest
             {
                 rollingSFXEmitter.Stop();
             }
+        }
+
+        public void PlayHit()
+        {
+            hitSFXEmitter.Play();
         }
     }
 }
