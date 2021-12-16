@@ -131,4 +131,10 @@ public class PlayerController : MonoBehaviour
     {
         volume += vol;
     }
+
+    public void SetVolume(float vol) {
+        if (vol >= 1f) {
+            volume = vol;
+        }
+    }
 }
