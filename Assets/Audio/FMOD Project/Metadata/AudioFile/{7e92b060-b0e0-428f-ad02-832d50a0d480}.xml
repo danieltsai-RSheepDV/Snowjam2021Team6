@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7e92b060-b0e0-428f-ad02-832d50a0d480}">
+		<property name="assetPath">
+			<value>snowball rolling v4.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>27.58530612244898</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f9013efb-b586-43d8-975f-1079d5cc9507}</destination>
+		</relationship>
+	</object>
+</objects>
