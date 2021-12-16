@@ -434,11 +434,8 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - Hits
   - Music
-  - Rolling
   - SFX
-  - Wind
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
