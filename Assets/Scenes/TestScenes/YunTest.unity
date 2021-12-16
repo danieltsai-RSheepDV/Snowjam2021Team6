@@ -902,6 +902,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 550807583908924970, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
+      propertyPath: m_VerticalAxis.m_MaxSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 550807583908924970, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
+      propertyPath: m_VerticalAxis.m_SpeedMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 550807583908924970, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
+      propertyPath: m_HorizontalAxis.m_MaxSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 550807583908924970, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
+      propertyPath: m_HorizontalAxis.m_AccelTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 550807583908924970, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
+      propertyPath: m_HorizontalAxis.m_DecelTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 550807583908924970, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
+      propertyPath: m_HorizontalAxis.m_SpeedMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
 --- !u!1 &1749219240
