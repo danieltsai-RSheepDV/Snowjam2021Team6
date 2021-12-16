@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
-{
+{ 
     public enum SnowballSize
     {
         SMALL,
@@ -17,12 +18,16 @@ public class PlayerController : MonoBehaviour
     private const int CameraMinValue = 5;
     private const int CameraMaxValue = 70;
     private const float ShootMaxVelocity = 1;
+    
     private const float mediumTreshold = 300f;
     private const float largeTreshold = 2000f;
 
+    private float maxGrowthRate = 0.2f;
     private bool isGrounded;
+    private bool isAiming = false;
     private float power;
-    private float volume;
+    private float growthRate = 1f;
+    private float growthDecel = 0.01f;
     private SnowballSize snowballSize = SnowballSize.SMALL;
 
     private Rigidbody rb;
@@ -30,27 +35,30 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera vcam;
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject model;
-
-    public float maxShootPower = 100f;
-    public float minShootPower = 0f;
-    public float growthRate = 1f;
-    public float growthDecel = 1f;
+    
+    public float growthValue = 0.1f;
+    [SerializeField] private float percentageGrowthDecel = 0.1f;
+    [SerializeField] private float percentageMaxGrowthRate = 1.5f;
 
     // Lifecycle
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
-        volume = radiusToVolume(model.transform.localScale.x);
+
+        growthDecel = growthValue * percentageGrowthDecel;
+        maxGrowthRate = percentageMaxGrowthRate * growthValue;
+        growthRate = maxGrowthRate;
     }
     
     void Update()
     {
-        if (volume >= largeTreshold)
+        
+        if (GetRadius() >= largeTreshold)
         {
             snowballSize = SnowballSize.LARGE;
         }
-        else if (volume >= mediumTreshold)
+        else if (GetRadius() >= mediumTreshold)
         {
             snowballSize = SnowballSize.MEDIUM;
         }
@@ -58,6 +66,8 @@ public class PlayerController : MonoBehaviour
         {
             snowballSize = SnowballSize.SMALL;
         }
+        
+        if(rb.velocity.magnitude < 1) rb.velocity = Vector3.zero;
     }
 
     //Events
@@ -65,13 +75,15 @@ public class PlayerController : MonoBehaviour
     void OnLook(InputValue inputValue)
     {
         power += inputValue.Get<Vector2>().y;
-        power = Mathf.Clamp(power, minShootPower, maxShootPower);
+        power = Mathf.Clamp(power, 0, 100f);
     }
     
     void OnShootDown()
     {
         if (CanShoot())
         {
+            isAiming = true;
+            
             vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MinValue =
                 vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.Value;
             vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxValue =
@@ -83,9 +95,11 @@ public class PlayerController : MonoBehaviour
 
     void OnShootUp(InputValue value)
     {
-        if (CanShoot())
+        if (CanShoot() && isAiming)
         {
-            rb.velocity = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z).normalized * power;
+            isAiming = false;
+            
+            rb.velocity = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z).normalized * (power);
 
             vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MinValue =
                 CameraMinValue;
@@ -96,12 +110,13 @@ public class PlayerController : MonoBehaviour
     
     private void OnCollisionStay(Collision other)
     {
+        
+        Debug.Log(growthRate);
         if (other.transform.CompareTag("Ground"))
         {
-            volume += growthRate * Time.deltaTime * rb.velocity.magnitude;
-            model.transform.localScale = Vector3.one * volumeToRadius(volume);
+            AddRadius(growthRate * Time.deltaTime * (rb.velocity.magnitude/100f));
             
-            //growthRate -= Time.deltaTime * rb.velocity.magnitude;
+            AddGrowthRate(-Time.deltaTime * growthDecel * (rb.velocity.magnitude/100));
         }
     }
 
@@ -127,30 +142,25 @@ public class PlayerController : MonoBehaviour
     {
         return isGrounded && rb.velocity.magnitude < ShootMaxVelocity;
     }
-
-    public float radiusToVolume(float radius)
-    {
-        return (float) ((4f / 3f) * Math.PI * Math.Pow(radius, 3));
-    }
-    
-    public float volumeToRadius(float volume)
-    {
-        return (float) Math.Pow((volume * 3f) / (4f * Math.PI), (1f/3f));
-    }
     
     public float GetPower()
     {
         return power;
     }
 
-    public float GetVolume()
+    public float GetRadius()
     {
-        return volume;
+        return model.transform.localScale.x;
     }
 
-    public void AddVolume(float vol)
+    private void SetRadius(float val)
     {
-        float tVol = volume + vol;
+        model.transform.localScale = Vector3.one * val;
+    }
+
+    public void AddRadius(float vol)
+    {
+        float tVol = GetRadius() + vol;
         float minSize = 1f;
         switch (snowballSize)
         {
@@ -161,7 +171,13 @@ public class PlayerController : MonoBehaviour
                 minSize = mediumTreshold;
                 break;
         }
-        volume = tVol < minSize ? minSize : tVol;
+        SetRadius(tVol < minSize ? minSize : tVol);
+    }
+
+    public void AddGrowthRate(float val)
+    {
+        growthRate += val;
+        growthRate = Mathf.Clamp(growthRate, 0f, maxGrowthRate);
     }
 
     public SnowballSize getSnowballSize()

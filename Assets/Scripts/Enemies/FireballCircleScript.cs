@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FireballCircleScript : MonoBehaviour
 {
+
+    [SerializeField] private float meltRate = 0.01f;
     private Rigidbody rb;
 
     // Start is called before the first frame update
@@ -14,17 +16,10 @@ public class FireballCircleScript : MonoBehaviour
 
     // Stay = melted
     private void OnTriggerStay(Collider other) {
-        if (other.gameObject.tag == "Player") {
+        if (other.gameObject.CompareTag("Player")) {
             // Modify game state, usually the player ->
             PlayerController pc = other.GetComponentInParent<PlayerController>();
-            if (pc.getSnowballSize() == PlayerController.SnowballSize.SMALL) {
-                pc.AddVolume(-5f);
-            } else if (pc.getSnowballSize() == PlayerController.SnowballSize.MEDIUM) {
-                pc.AddVolume(-15f);
-            } else {
-                // Large
-                pc.AddVolume(-75f);
-            }
+            pc.AddRadius(-meltRate);
             // Done with object?
             // Destroy(this.gameObject);
         }

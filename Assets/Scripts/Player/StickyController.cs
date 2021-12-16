@@ -6,9 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 public class StickyController : MonoBehaviour
 {
-
-    [SerializeField] private GameObject model;
-    
     private PlayerController playerController;
 
     // Start is called before the first frame update
@@ -29,13 +26,12 @@ public class StickyController : MonoBehaviour
         {
             StickableObject s = other.gameObject.GetComponent<StickableObject>();
 
-            if (model.transform.localScale.x > s.radiusLimit)
+            if (playerController.GetRadius() > s.radiusLimit)
             {
                 Destroy(other.rigidbody);
                 Destroy(other.collider);
                 other.transform.parent = transform;
-            
-                playerController.AddVolume(s.volume);
+                playerController.AddGrowthRate(playerController.growthValue * 0.25f);
             }
         }
     }

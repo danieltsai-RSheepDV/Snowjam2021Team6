@@ -902,41 +902,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 550807583908924970, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
-      propertyPath: m_VerticalAxis.m_MaxSpeed
-      value: 0.4
+    - target: {fileID: 1928217318405773632, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
+      propertyPath: growthValue
+      value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 550807583908924970, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
-      propertyPath: m_VerticalAxis.m_SpeedMode
-      value: 1
+    - target: {fileID: 1928217318405773632, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
+      propertyPath: initialGrowthRate
+      value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 550807583908924970, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
-      propertyPath: m_HorizontalAxis.m_MaxSpeed
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 550807583908924970, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
-      propertyPath: m_HorizontalAxis.m_AccelTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 550807583908924970, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
-      propertyPath: m_HorizontalAxis.m_DecelTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 550807583908924970, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
-      propertyPath: m_HorizontalAxis.m_SpeedMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 576565417066049079, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: bb281da19f990c44d82cd81587d8fd8a, type: 2}
-    - target: {fileID: 839284493428476029, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
-      propertyPath: m_Mass
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 839284493428476029, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
-      propertyPath: m_AngularDrag
-      value: 1
+    - target: {fileID: 1928217318405773632, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
+      propertyPath: percentageGrowthDecel
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
@@ -1219,7 +1195,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941106967}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8fcd6d9d063e36b48ad355f4f3b31424, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 863f31c5303947147b6e7a1ce760922e, type: 2}
   m_EnableTreeColliders: 1
