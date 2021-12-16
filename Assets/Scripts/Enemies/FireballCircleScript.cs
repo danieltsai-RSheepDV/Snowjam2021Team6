@@ -18,9 +18,9 @@ public class FireballCircleScript : MonoBehaviour
             // Modify game state, usually the player ->
             PlayerController pc = other.GetComponentInParent<PlayerController>();
             if (pc.GetVolume() > 100f) {
-                pc.SetVolume(10f);
+                pc.AddVolume(-1000f);
             } else {
-                pc.SetVolume(pc.GetVolume()-100f);
+                pc.AddVolume(-1000f);
             }
             // Done with object?
             // Destroy(this.gameObject);

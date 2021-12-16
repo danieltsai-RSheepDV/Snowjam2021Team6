@@ -129,12 +129,8 @@ public class PlayerController : MonoBehaviour
 
     public void AddVolume(float vol)
     {
-        volume += vol;
-    }
-
-    public void SetVolume(float vol) {
-        if (vol >= 1f) {
-            volume = vol;
-        }
+        float tVol = volume + vol;
+        Debug.Log(tVol);
+        volume = tVol < 1f ? 1f : tVol;
     }
 }
