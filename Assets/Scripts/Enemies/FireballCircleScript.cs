@@ -12,15 +12,18 @@ public class FireballCircleScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Touch = collect
-    private void OnTriggerEnter(Collider other) {
+    // Stay = melted
+    private void OnTriggerStay(Collider other) {
         if (other.gameObject.tag == "Player") {
             // Modify game state, usually the player ->
             PlayerController pc = other.GetComponentInParent<PlayerController>();
-            if (pc.GetVolume() > 100f) {
-                pc.AddVolume(-1000f);
+            if (pc.getSnowballSize() == PlayerController.SnowballSize.SMALL) {
+                pc.AddVolume(-5f);
+            } else if (pc.getSnowballSize() == PlayerController.SnowballSize.MEDIUM) {
+                pc.AddVolume(-15f);
             } else {
-                pc.AddVolume(-1000f);
+                // Large
+                pc.AddVolume(-75f);
             }
             // Done with object?
             // Destroy(this.gameObject);

@@ -9,7 +9,7 @@ public class FattenPowerUpScript : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
             // Modify game state, usually the player ->
-            other.GetComponentInParent<PlayerController>().growthRate *= 100.5f;
+            other.GetComponentInParent<PlayerController>().AddVolume(1000f);
             // Done with object
             Destroy(this.gameObject);
         }
