@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerIndex: -1
-  XYAxis: {fileID: -4794558907739670161, guid: c1d785541f66d9a448d1f830bb5421e1, type: 3}
+  XYAxis: {fileID: -4794558907739670161, guid: 542973351f30aa240b3666e1ac450a7d, type: 3}
   ZAxis: {fileID: 0}
 --- !u!1 &550807583130937404
 GameObject:
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_VerticalAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 220
+    m_MaxSpeed: 160
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
@@ -540,7 +540,6 @@ GameObject:
   - component: {fileID: 4970519348915377948}
   - component: {fileID: 576565417066049079}
   - component: {fileID: 4269329736463819466}
-  - component: {fileID: 1674770694591885266}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -624,18 +623,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1674770694591885266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2941509306874744695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfa2da23602b81f40b02b9a81e2c3afe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3887168725208840802
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +635,7 @@ GameObject:
   - component: {fileID: 1928217318405773632}
   - component: {fileID: 759799703172089767}
   - component: {fileID: 839284493428476029}
+  - component: {fileID: 8591293649716607796}
   m_Layer: 0
   m_Name: Snowball
   m_TagString: Untagged
@@ -732,3 +720,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8591293649716607796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3887168725208840802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa2da23602b81f40b02b9a81e2c3afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

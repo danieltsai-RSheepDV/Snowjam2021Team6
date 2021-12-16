@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,8 +22,8 @@ public class StickyController : MonoBehaviour
         if (collision.transform.CompareTag("Object"))
         {
             Destroy(collision.rigidbody);
-            collision.gameObject.layer = 6;
-            collision.transform.parent = transform.parent;
+            Destroy(collision.collider);
+            collision.transform.parent = transform;
         }
     }
 }
