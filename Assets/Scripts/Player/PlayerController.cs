@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
 {
     private const int CameraMinValue = 5;
     private const int CameraMaxValue = 70;
+    private const float ShootMaxVelocity = 1;
 
+    private bool isGrounded;
     private float power;
     private float volume;
     
@@ -28,7 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
-        volume = radiusToVolume(transform.localScale.x);
+        volume = radiusToVolume(model.transform.localScale.x);
     }
     
     void Update()
@@ -46,22 +48,28 @@ public class PlayerController : MonoBehaviour
     
     void OnShootDown()
     {
-        vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MinValue =
-            vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.Value;
-        vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxValue =
-            vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.Value;
-        
+        if (CanShoot())
+        {
+            vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MinValue =
+                vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.Value;
+            vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxValue =
+                vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.Value;
+        }
+
         power = 0f;
     }
 
     void OnShootUp(InputValue value)
     {
-        rb.velocity = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z).normalized * power;
-        
-        vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MinValue =
-            CameraMinValue;
-        vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxValue =
-            CameraMaxValue;
+        if (CanShoot())
+        {
+            rb.velocity = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z).normalized * power;
+
+            vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MinValue =
+                CameraMinValue;
+            vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxValue =
+                CameraMaxValue;
+        }
     }
     
     private void OnCollisionStay(Collision other)
@@ -72,8 +80,29 @@ public class PlayerController : MonoBehaviour
             model.transform.localScale = Vector3.one * volumeToRadius(volume);
         }
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.transform.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
     
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.transform.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
+
     //Methods
+
+    public bool CanShoot()
+    {
+        return isGrounded && rb.velocity.magnitude < ShootMaxVelocity;
+    }
 
     public float radiusToVolume(float radius)
     {
@@ -88,5 +117,15 @@ public class PlayerController : MonoBehaviour
     public float GetPower()
     {
         return power;
+    }
+
+    public float GetVolume()
+    {
+        return volume;
+    }
+
+    public void AddVolume(float vol)
+    {
+        volume += vol;
     }
 }
