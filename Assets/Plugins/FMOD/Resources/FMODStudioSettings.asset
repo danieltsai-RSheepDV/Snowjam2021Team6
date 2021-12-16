@@ -434,6 +434,8 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Hits
+  - Music
   - Wind
   BanksToLoad: []
   LiveUpdatePort: 9264
