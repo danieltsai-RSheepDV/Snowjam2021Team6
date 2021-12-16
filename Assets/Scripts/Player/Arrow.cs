@@ -10,7 +10,6 @@ public class Arrow : MonoBehaviour
 
     private PlayerController playerController;
     private SpriteRenderer sp;
-    private float length = 1;
     
     // Start is called before the first frame update
     void Start()
