@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="UiMixerView" id="{a1ce0f55-6467-4d7f-8005-d604ade93a74}">
+		<property name="name">
+			<value>Music</value>
+		</property>
+		<relationship name="assignedStrips">
+			<destination>{0a842e47-81e5-49da-ac45-85e91486b445}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{354f4d1e-fa42-4242-be9e-380c57c4080e}</destination>
+		</relationship>
+	</object>
+</objects>
