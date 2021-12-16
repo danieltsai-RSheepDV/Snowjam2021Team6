@@ -7,14 +7,22 @@ public class FireballCircleScript : MonoBehaviour
 
     [SerializeField] private float meltRate = 0.01f;
     private Rigidbody rb;
-    private float startTime;
+    //private float startTime;
+
+    private Vector3 center;
+    private float degreesPS = -65.0f;
+    private Vector3 circleDiff;
+    [SerializeField] private float radi;
 
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
-        startTime = Time.time;
+        //startTime = Time.time;
         rb = GetComponent<Rigidbody>();
+        Vector3 pos = gameObject.transform.position;
+        center = new Vector3(pos.x + radi, pos.y, pos.z + radi);
+        circleDiff = transform.position - center;
     }
 
     // Stay = melted
@@ -50,5 +58,8 @@ public class FireballCircleScript : MonoBehaviour
             pos = new Vector3(pos.x, 2.5f, pos.z);
             gameObject.transform.position = pos;
         }**/
+
+        circleDiff = Quaternion.AngleAxis (degreesPS * Time.deltaTime, Vector3.up) * circleDiff;
+        transform.position = center + circleDiff;
     }
 }
