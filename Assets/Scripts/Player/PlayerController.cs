@@ -46,11 +46,11 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if (volume > largeTreshold)
+        if (volume >= largeTreshold)
         {
             snowballSize = SnowballSize.LARGE;
         }
-        else if (volume > mediumTreshold)
+        else if (volume >= mediumTreshold)
         {
             snowballSize = SnowballSize.MEDIUM;
         }
@@ -151,8 +151,17 @@ public class PlayerController : MonoBehaviour
     public void AddVolume(float vol)
     {
         float tVol = volume + vol;
-        Debug.Log(tVol);
-        volume = tVol < 1f ? 1f : tVol;
+        float minSize = 1f;
+        switch (snowballSize)
+        {
+            case SnowballSize.LARGE:
+                minSize = largeTreshold;
+                break;
+            case SnowballSize.MEDIUM:
+                minSize = mediumTreshold;
+                break;
+        }
+        volume = tVol < minSize ? minSize : tVol;
     }
 
     public SnowballSize getSnowballSize()
