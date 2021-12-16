@@ -11,20 +11,24 @@ public class PlayerController : MonoBehaviour
     private const int CameraMaxValue = 70;
 
     private float power;
+    private float volume;
     
     private Rigidbody rb;
 
-    public CinemachineVirtualCamera vcam;
-    public Camera cam;
+    [SerializeField] private CinemachineVirtualCamera vcam;
+    [SerializeField] private Camera cam;
+    [SerializeField] private GameObject model;
 
     public float maxShootPower = 100;
     public float minShootPower = 0;
-    
+    public float growthRate = 1;
+
     // Lifecycle
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        volume = radiusToVolume(transform.localScale.x);
     }
     
     void Update()
@@ -60,8 +64,27 @@ public class PlayerController : MonoBehaviour
             CameraMaxValue;
     }
     
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.transform.CompareTag("Ground"))
+        {
+            volume += growthRate * Time.deltaTime * rb.velocity.magnitude;
+            model.transform.localScale = Vector3.one * volumeToRadius(volume);
+        }
+    }
+    
     //Methods
 
+    public float radiusToVolume(float radius)
+    {
+        return (float) ((4f / 3f) * Math.PI * Math.Pow(radius, 3));
+    }
+    
+    public float volumeToRadius(float volume)
+    {
+        return (float) Math.Pow((volume * 3f) / (4f * Math.PI), (1f/3f));
+    }
+    
     public float GetPower()
     {
         return power;

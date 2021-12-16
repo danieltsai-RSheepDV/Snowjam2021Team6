@@ -11,6 +11,7 @@ public class CanvasController : MonoBehaviour
     {
         menu = GameObject.Find("Menu");
         options = GameObject.Find("Options");
+        ToggleMenu();
     }
 
     // Displays the menu
