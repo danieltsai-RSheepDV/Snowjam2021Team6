@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class StickableObject : MonoBehaviour
 {
+    public float radiusLimit;
+    public float volume;
+    
     // Start is called before the first frame update
     void Start()
     {
