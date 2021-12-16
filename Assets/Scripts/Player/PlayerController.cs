@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
             volume += growthRate * Time.deltaTime * rb.velocity.magnitude;
             model.transform.localScale = Vector3.one * volumeToRadius(volume);
             
-            growthRate -= Time.deltaTime * rb.velocity.magnitude;
+            //growthRate -= Time.deltaTime * rb.velocity.magnitude;
         }
     }
 
