@@ -17,17 +17,19 @@ public class PlayerController : MonoBehaviour
 
     private const int CameraMinValue = 5;
     private const int CameraMaxValue = 70;
-    private const float ShootMaxVelocity = 1;
-    
+
     private const float mediumTreshold = 300f;
     private const float largeTreshold = 2000f;
 
-    private float maxGrowthRate = 0.2f;
     private bool isGrounded;
+    private bool canJump = true;
     private bool isAiming = false;
     private float power;
+    
+    private float maxGrowthRate = 0.2f;
     private float growthRate = 1f;
     private float growthDecel = 0.01f;
+    
     private SnowballSize snowballSize = SnowballSize.SMALL;
 
     private Rigidbody rb;
@@ -73,7 +75,7 @@ public class PlayerController : MonoBehaviour
     void OnLook(InputValue inputValue)
     {
         power += inputValue.Get<Vector2>().y;
-        power = Mathf.Clamp(power, 0, 100f);
+        power = Mathf.Clamp(power, 10f, 100f);
     }
     
     void OnShootDown()
@@ -95,6 +97,8 @@ public class PlayerController : MonoBehaviour
     {
         if (CanShoot() && isAiming)
         {
+            if (!isGrounded) canJump = false;
+            
             isAiming = false;
             
             rb.velocity = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z).normalized * (power);
@@ -108,8 +112,6 @@ public class PlayerController : MonoBehaviour
     
     private void OnCollisionStay(Collision other)
     {
-        
-        Debug.Log(growthRate);
         if (other.transform.CompareTag("Ground"))
         {
             AddRadius(growthRate * Time.deltaTime * (rb.velocity.magnitude/100f));
@@ -123,6 +125,7 @@ public class PlayerController : MonoBehaviour
         if (other.transform.CompareTag("Ground"))
         {
             isGrounded = true;
+            canJump = true;
         }
     }
     
@@ -138,7 +141,7 @@ public class PlayerController : MonoBehaviour
 
     public bool CanShoot()
     {
-        return isGrounded && rb.velocity.magnitude < ShootMaxVelocity;
+        return isGrounded || canJump; //&& rb.velocity.magnitude < ShootMaxVelocity;;
     }
     
     public float GetPower()
