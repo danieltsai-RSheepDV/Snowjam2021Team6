@@ -926,6 +926,18 @@ PrefabInstance:
       propertyPath: m_HorizontalAxis.m_SpeedMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 576565417066049079, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bb281da19f990c44d82cd81587d8fd8a, type: 2}
+    - target: {fileID: 839284493428476029, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 839284493428476029, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
 --- !u!1 &1749219240

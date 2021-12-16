@@ -7,23 +7,34 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public enum SnowballSize
+    {
+        SMALL,
+        MEDIUM,
+        LARGE
+    }
+
     private const int CameraMinValue = 5;
     private const int CameraMaxValue = 70;
     private const float ShootMaxVelocity = 1;
+    private const float mediumTreshold = 300f;
+    private const float largeTreshold = 2000f;
 
     private bool isGrounded;
     private float power;
     private float volume;
-    
+    private SnowballSize snowballSize = SnowballSize.SMALL;
+
     private Rigidbody rb;
 
     [SerializeField] private CinemachineVirtualCamera vcam;
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject model;
 
-    public float maxShootPower = 100;
-    public float minShootPower = 0;
-    public float growthRate = 1;
+    public float maxShootPower = 100f;
+    public float minShootPower = 0f;
+    public float growthRate = 1f;
+    public float growthDecel = 1f;
 
     // Lifecycle
     void Start()
@@ -35,7 +46,18 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        
+        if (volume > largeTreshold)
+        {
+            snowballSize = SnowballSize.LARGE;
+        }
+        else if (volume > mediumTreshold)
+        {
+            snowballSize = SnowballSize.MEDIUM;
+        }
+        else
+        {
+            snowballSize = SnowballSize.SMALL;
+        }
     }
 
     //Events
@@ -78,9 +100,8 @@ public class PlayerController : MonoBehaviour
         {
             volume += growthRate * Time.deltaTime * rb.velocity.magnitude;
             model.transform.localScale = Vector3.one * volumeToRadius(volume);
-
-            vcam.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance =
-                model.transform.localScale.x * 20;
+            
+            growthRate -= Time.deltaTime * rb.velocity.magnitude;
         }
     }
 
