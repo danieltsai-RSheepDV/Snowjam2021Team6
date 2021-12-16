@@ -13,6 +13,9 @@ public class FireballCircleScript : MonoBehaviour
     private float degreesPS = -65.0f;
     private Vector3 circleDiff;
     [SerializeField] private float radi;
+    [SerializeField] private float initDegreesFromXInXZ;
+    [SerializeField] private float groundHeight;
+    [SerializeField] private float rotateHeight;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +24,7 @@ public class FireballCircleScript : MonoBehaviour
         //startTime = Time.time;
         rb = GetComponent<Rigidbody>();
         Vector3 pos = gameObject.transform.position;
-        center = new Vector3(pos.x + radi, pos.y, pos.z + radi);
+        center = new Vector3(pos.x - radi*Mathf.Cos(initDegreesFromXInXZ/180f*Mathf.PI), rotateHeight, pos.z - radi*Mathf.Sin(initDegreesFromXInXZ/180f*Mathf.PI));
         circleDiff = transform.position - center;
     }
 
@@ -61,5 +64,8 @@ public class FireballCircleScript : MonoBehaviour
 
         circleDiff = Quaternion.AngleAxis (degreesPS * Time.deltaTime, Vector3.up) * circleDiff;
         transform.position = center + circleDiff;
+        if (transform.position.y < groundHeight) {
+            transform.position = new Vector3(transform.position.x, groundHeight, transform.position.z);
+        }
     }
 }
