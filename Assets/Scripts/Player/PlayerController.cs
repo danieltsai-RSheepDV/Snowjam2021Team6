@@ -184,4 +184,9 @@ public class PlayerController : MonoBehaviour
     {
         return snowballSize;
     }
+
+    public bool GetIsAiming()
+    {
+        return isAiming;
+    }
 }

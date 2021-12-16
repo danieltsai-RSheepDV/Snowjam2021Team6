@@ -902,18 +902,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1928217318405773632, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
-      propertyPath: growthValue
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1928217318405773632, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
-      propertyPath: initialGrowthRate
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1928217318405773632, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
-      propertyPath: percentageGrowthDecel
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c48d9503cb1515d44843df0a786eb13b, type: 3}
 --- !u!1 &1749219240
