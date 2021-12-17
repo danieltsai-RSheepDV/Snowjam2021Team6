@@ -26,6 +26,24 @@ public class SoundManagerSingleton : MonoBehaviour
         uiBus = FMODUnity.RuntimeManager.GetBus("bus:/UI");
     }
 
+    // Volume between 0f and 1f
+    public static void SetMusicVolume(float volume)
+    {
+        instance.musicBus.setVolume(volume);
+    }
+
+    // Volume between 0f and 1f
+    public static void SetSFXVolume(float volume)
+    {
+        instance.sfxBus.setVolume(volume);
+    }
+
+    // Volume between 0f and 1f
+    public static void SetUIVolume(float volume)
+    {
+        instance.uiBus.setVolume(volume);
+    }
+
     public static void PauseSFX()
     {
         instance.sfxBus.setPaused(true);
