@@ -34,19 +34,6 @@ public class FireballCircleScript : MonoBehaviour
             // Modify game state, usually the player ->
             PlayerController pc = other.GetComponentInParent<PlayerController>();
             pc.AddRadius(-meltRate);
-/*
-            //Old size-based tiers of volume removal
-            if (pc.getSnowballSize() == PlayerController.SnowballSize.SMALL) {
-                pc.AddVolume(-3f);
-            } else if (pc.getSnowballSize() == PlayerController.SnowballSize.MEDIUM) {
-                pc.AddVolume(-15f);
-            } else {
-                // Large
-                pc.AddVolume(-75f);
-            }
-*/
-            // Done with object?
-            // Destroy(this.gameObject);
         }
     }
 
