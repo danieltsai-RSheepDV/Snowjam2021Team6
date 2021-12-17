@@ -7,6 +7,7 @@ TagManager:
   - Object
   - Collectible
   - Ground
+  - Boss1
   layers:
   - Default
   - TransparentFX
