@@ -6,7 +6,6 @@ public class CollisionReporter : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log($"Report hit!");
         foreach (var listener in listeners)
         {
             listener.OnCollisionEnter(collision);
@@ -15,7 +14,6 @@ public class CollisionReporter : MonoBehaviour
 
     void OnCollisionExit(Collision collision)
     {
-        Debug.Log($"Report unhit!");
         foreach (var listener in listeners)
         {
             listener.OnCollisionExit(collision);
