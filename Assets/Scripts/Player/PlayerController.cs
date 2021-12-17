@@ -77,8 +77,13 @@ public class PlayerController : MonoBehaviour
             snowballSize = SnowballSize.SMALL;
         }
 
-        vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxSpeed = CameraInitSpeed * PlayerPrefs.GetFloat("sensitivity");
-        vcam.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.m_MaxSpeed = CameraInitSpeed * PlayerPrefs.GetFloat("sensitivity");
+        float sens = 1f;
+        if(PlayerPrefs.HasKey("sensitivity"))
+        {
+            sens = PlayerPrefs.GetFloat("sensitivity");
+        }
+        vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxSpeed = CameraInitSpeed * sens;
+        vcam.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.m_MaxSpeed = CameraInitSpeed * sens;
     }
 
     //Events
