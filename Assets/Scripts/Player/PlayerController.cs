@@ -125,7 +125,12 @@ public class PlayerController : MonoBehaviour
                 CameraMaxValue;
         }
     }
-    
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("test");
+    }
+
     private void OnCollisionStay(Collision other)
     {
         if (other.transform.CompareTag("Ground"))
