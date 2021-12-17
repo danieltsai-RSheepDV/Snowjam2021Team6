@@ -411,7 +411,7 @@ MonoBehaviour:
   sourceProjectPath: Assets/Audio/FMOD Project/FMOD Project.fspro
   sourceBankPath: Assets/Audio/FMOD Banks
   SourceBankPathUnformatted: 
-  BankRefreshCooldown: 5
+  BankRefreshCooldown: -2
   ShowBankRefreshWindow: 1
   AutomaticEventLoading: 1
   BankLoadType: 0
