@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
             
             isAiming = false;
             
-            rb.velocity = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z).normalized * (power * powerModifier);
+            rb.velocity = new Vector3(cam.transform.forward.x,  isGrounded ? -1f : 0f, cam.transform.forward.z).normalized * (power * powerModifier);
 
             vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MinValue =
                 CameraMinValue;
