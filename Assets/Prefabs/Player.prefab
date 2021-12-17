@@ -856,8 +856,7 @@ PrefabInstance:
       propertyPath: attenuationObject
       value: 
       objectReference: {fileID: 3887168725208840802}
-    m_RemovedComponents:
-    - {fileID: 4212835258933916241, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
 --- !u!4 &550807582813809903 stripped
 Transform:
