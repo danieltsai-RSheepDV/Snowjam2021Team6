@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private const int CameraMinValue = 5;
     private const int CameraMaxValue = 70;
+    private const float CameraInitSpeed = 0.4f;
 
     private const float mediumTreshold = 10f;
     private const float largeTreshold = 200f;
@@ -75,6 +76,9 @@ public class PlayerController : MonoBehaviour
         {
             snowballSize = SnowballSize.SMALL;
         }
+
+        vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxSpeed = CameraInitSpeed * PlayerPrefs.GetFloat("sensitivity");
+        vcam.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.m_MaxSpeed = CameraInitSpeed * PlayerPrefs.GetFloat("sensitivity");
     }
 
     //Events
