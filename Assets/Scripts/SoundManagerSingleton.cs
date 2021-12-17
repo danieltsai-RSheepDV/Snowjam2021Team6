@@ -25,4 +25,14 @@ public class SoundManagerSingleton : MonoBehaviour
         sfxBus = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
         uiBus = FMODUnity.RuntimeManager.GetBus("bus:/UI");
     }
+
+    public static void PauseSFX()
+    {
+        instance.sfxBus.setPaused(true);
+    }
+
+    public static void UnpauseSFX()
+    {
+        instance.sfxBus.setPaused(false);
+    }
 }
