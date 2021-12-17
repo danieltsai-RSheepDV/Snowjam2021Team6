@@ -17,17 +17,24 @@ public class PauseActivator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            if (paused)
-            {
-                unpauseGame();
-            } else
-            {
-                pauseGame();
-            }
+        
+    }
 
+    public void OnPause()
+    {
+        if (paused)
+        {
+            unpauseGame();
         }
+        else
+        {
+            pauseGame();
+        }
+    }
+
+    public void OnCancel()
+    {
+        unpauseGame();
     }
 
     public void unpauseGame()
