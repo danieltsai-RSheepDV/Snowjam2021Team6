@@ -38,6 +38,7 @@ public class PauseActivator : MonoBehaviour
         pauseUI.SetActive(false);
         paused = false;
         Time.timeScale = 1;
+        SoundManagerSingleton.UnpauseSFX();
     }
 
     public void pauseGame()
@@ -46,6 +47,7 @@ public class PauseActivator : MonoBehaviour
         pauseUI.SetActive(true);
         paused = true;
         Time.timeScale = 0;
+        SoundManagerSingleton.PauseSFX();
     }
     public void LoadScene(string name)
     {
