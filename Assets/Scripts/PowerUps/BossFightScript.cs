@@ -22,18 +22,19 @@ public class BossFightScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player")) {
             // Modify game state, usually the player ->
             for (int i = 1; i < 7; i++) {
-                GameObject targetFB = gameObject.transform.Find(childBaseString + i.ToString()).gameObject;
-                targetFB.SetActive(true);
+                GameObject targetFB = GameObject.Find(childBaseString + i.ToString()).gameObject;
+                targetFB.GetComponent<MeshRenderer>().enabled = true;
+                targetFB.GetComponent<SphereCollider>().enabled = true;
             }
             // Done with object
             // But don't destroy to avoid destroying children
-            // Destroy(this.gameObject);
-            //gameObject.setActive(false);
+            Destroy(this.gameObject);
+
         }
     }
 
     // Update is called once per frame
-    void Update()
-    {
-    }
+    //void Update()
+    //{
+    //}
 }
