@@ -15,8 +15,12 @@ public class JumpPowerUpScript : MonoBehaviour
             // Modify game state, usually the player ->
             rb = other.GetComponentInParent<Rigidbody>();
             rb.velocity = new Vector3(rb.velocity.x, jumpVelocity, rb.velocity.z);
-            // Done with object
-            Destroy(this.gameObject);
+            if (rb.velocity.x < 1f && rb.velocity.z < 1f) {
+                rb.velocity = new Vector3(1, jumpVelocity, rb.velocity.z);
+            }
+            // Decision to keep as permanent object
+            // Destroy(this.gameObject);
+
         }
     }
 }
