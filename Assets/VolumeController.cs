@@ -21,7 +21,7 @@ public class VolumeController : MonoBehaviour
     public void UpdateVolume()
     {
         volume = slider.value;
-        musicBus.setVolume(volume);
+        musicBus.setVolume(Mathf.Pow(volume, 2f));
     }
 
     // Update is called once per frame

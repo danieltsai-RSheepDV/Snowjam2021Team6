@@ -1,5 +1,5 @@
 {
-    "name": "Winter 2021 Jam - Prototype",
+    "name": "Snowjam2021Team6",
     "maps": [
         {
             "name": "Player",
@@ -27,6 +27,15 @@
                     "name": "ShootUp",
                     "type": "Button",
                     "id": "aaaa27a6-4a7f-431c-a119-7800db6dfd43",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "6ecaea08-d9c0-4f82-b70f-316a80dcf6d3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -124,6 +133,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a414f1a9-8b38-42df-8b1d-814f11636a1c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ShootDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3e550627-3ca3-42ba-92aa-ffe20a03badc",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "Press(behavior=1)",
@@ -174,6 +194,39 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "ShootUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e1343acc-8cc0-4189-8b67-cebdf0252765",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ShootUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0645c32c-1bd8-4022-8916-c863dfbcd95e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8b7856bc-3644-43fa-800c-42dc29a9ded2",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

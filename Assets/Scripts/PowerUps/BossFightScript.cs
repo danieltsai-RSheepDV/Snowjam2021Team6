@@ -29,7 +29,6 @@ public class BossFightScript : MonoBehaviour
                 }
             }
             // Done with object
-            // But don't destroy to avoid destroying children
             Destroy(this.gameObject);
 
         }
