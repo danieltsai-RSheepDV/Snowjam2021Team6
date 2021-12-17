@@ -805,11 +805,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ceb6fdb7deaf07142a491dca1266143b, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 85432f7066ab26941903e748bf8fbbad, type: 3}
+    m_FontSize: 74
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 7
     m_MaxSize: 159
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -817,7 +817,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YUKI KATAMARI
+  m_Text: Yuki Katamari
 --- !u!222 &424543703
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1026,8 +1026,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ceb6fdb7deaf07142a491dca1266143b, type: 3}
-    m_FontSize: 20
+    m_Font: {fileID: 12800000, guid: 85432f7066ab26941903e748bf8fbbad, type: 3}
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1248,8 +1248,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ceb6fdb7deaf07142a491dca1266143b, type: 3}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 85432f7066ab26941903e748bf8fbbad, type: 3}
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1260,7 +1260,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FULLSCREEN
+  m_Text: Fullscreen
 --- !u!222 &919608117
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1472,7 +1472,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ceb6fdb7deaf07142a491dca1266143b, type: 3}
+    m_Font: {fileID: 12800000, guid: 85432f7066ab26941903e748bf8fbbad, type: 3}
     m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
@@ -1484,7 +1484,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: OPSHUNZ
+  m_Text: Options
 --- !u!222 &933903211
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1551,8 +1551,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ceb6fdb7deaf07142a491dca1266143b, type: 3}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 85432f7066ab26941903e748bf8fbbad, type: 3}
+    m_FontSize: 46
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1563,7 +1563,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: VOLUME
+  m_Text: Volume
 --- !u!222 &974405538
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1846,8 +1846,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ceb6fdb7deaf07142a491dca1266143b, type: 3}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 85432f7066ab26941903e748bf8fbbad, type: 3}
+    m_FontSize: 46
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1858,7 +1858,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SENSITIVITY
+  m_Text: Sensitivity
 --- !u!222 &1184198799
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2652,8 +2652,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ceb6fdb7deaf07142a491dca1266143b, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 85432f7066ab26941903e748bf8fbbad, type: 3}
+    m_FontSize: 74
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2664,7 +2664,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: OPTIONS
+  m_Text: Options
 --- !u!222 &1444233239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8577,7 +8577,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ceb6fdb7deaf07142a491dca1266143b, type: 3}
+    m_Font: {fileID: 12800000, guid: 85432f7066ab26941903e748bf8fbbad, type: 3}
     m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
@@ -8589,7 +8589,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BACK
+  m_Text: Back
 --- !u!222 &1984271498
 CanvasRenderer:
   m_ObjectHideFlags: 0
