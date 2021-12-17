@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6256015006236630038}
   - component: {fileID: 6256015006236630039}
   - component: {fileID: 6256015006236630042}
+  - component: {fileID: 6818257442159509641}
   m_Layer: 0
   m_Name: FireballEnemy
   m_TagString: Untagged
@@ -82,6 +83,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6818257442159509641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6256015006236630032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2113028275
+      Data2: 1171941266
+      Data3: -1724891224
+      Data4: -314259669
+    Path: event:/Enemies/Fire
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6256015007518846344
 GameObject:
   m_ObjectHideFlags: 0
