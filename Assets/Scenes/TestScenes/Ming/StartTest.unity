@@ -7940,6 +7940,7 @@ GameObject:
   - component: {fileID: 1733161551}
   - component: {fileID: 1733161554}
   - component: {fileID: 1733161553}
+  - component: {fileID: 1733161552}
   m_Layer: 5
   m_Name: Fullscreen
   m_TagString: Untagged
@@ -7968,6 +7969,18 @@ RectTransform:
   m_AnchoredPosition: {x: -135, y: 21}
   m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1733161552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733161550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d76a93937223364b9a81c943b476beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &1733161553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8156,6 +8169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1816689358}
   - component: {fileID: 1816689359}
+  - component: {fileID: 1816689360}
   m_Layer: 5
   m_Name: Sensitivity
   m_TagString: Untagged
@@ -8248,6 +8262,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1816689360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816689357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e55849c6fc489f40a036f7ab8dd59fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1822393813
 GameObject:
   m_ObjectHideFlags: 0
