@@ -520,6 +520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 158333233}
   - component: {fileID: 158333234}
+  - component: {fileID: 158333235}
   m_Layer: 5
   m_Name: Sensitivity
   m_TagString: Untagged
@@ -612,6 +613,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &158333235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158333232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e55849c6fc489f40a036f7ab8dd59fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &174680173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,7 +1591,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 475396134}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1091680023}
+        m_TargetAssemblyTypeName: PauseActivator, Assembly-CSharp
+        m_MethodName: unpauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &475396134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2692,8 +2717,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CanvasController, Assembly-CSharp
+      - m_Target: {fileID: 1070962255}
+        m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
         m_MethodName: ToggleMenu
         m_Mode: 1
         m_Arguments:
@@ -3156,6 +3181,7 @@ GameObject:
   - component: {fileID: 982504602}
   - component: {fileID: 982504604}
   - component: {fileID: 982504603}
+  - component: {fileID: 982504605}
   m_Layer: 5
   m_Name: Fullscreen
   m_TagString: Untagged
@@ -3252,6 +3278,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
+--- !u!114 &982504605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982504601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d76a93937223364b9a81c943b476beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1011943235
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,7 +3382,7 @@ GameObject:
   - component: {fileID: 1062576104}
   - component: {fileID: 1062576103}
   m_Layer: 5
-  m_Name: Options
+  m_Name: Options Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3413,7 +3451,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1062576104}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1070962255}
+        m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+        m_MethodName: ToggleOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1062576104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4213,7 +4263,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1285615929}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1091680023}
+        m_TargetAssemblyTypeName: PauseActivator, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: StartTest
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1285615929
 MonoBehaviour:
   m_ObjectHideFlags: 0

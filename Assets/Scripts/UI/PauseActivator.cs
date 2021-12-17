@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseActivator : MonoBehaviour
 {
@@ -29,18 +30,22 @@ public class PauseActivator : MonoBehaviour
         }
     }
 
-    void unpauseGame()
+    public void unpauseGame()
     {
         pauseUI.SetActive(false);
         paused = false;
         Time.timeScale = 1;
     }
 
-    void pauseGame()
+    public void pauseGame()
     {
         pauseUI.SetActive(true);
         paused = true;
         Time.timeScale = 0;
     }
-
+    public void LoadScene(string name)
+    {
+        unpauseGame();
+        SceneManager.LoadScene(name);
+    }
 }
