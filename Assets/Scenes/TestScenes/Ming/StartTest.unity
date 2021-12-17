@@ -817,7 +817,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: EPIC GAEM WOOOOO
+  m_Text: YUKI KATAMARI
 --- !u!222 &424543703
 CanvasRenderer:
   m_ObjectHideFlags: 0
