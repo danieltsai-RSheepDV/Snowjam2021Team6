@@ -671,6 +671,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20c829c484df3648b82de6b7056e275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sizeChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8591293649716607796}
+        m_TargetAssemblyTypeName: StickyController, Assembly-CSharp
+        m_MethodName: dropObjects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   vcam: {fileID: 550807583021131019}
   cam: {fileID: 550807582915464371}
   model: {fileID: 2941509306874744695}

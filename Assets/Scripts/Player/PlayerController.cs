@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour
         MEDIUM,
         LARGE
     }
+
+    public UnityEvent sizeChanged = new UnityEvent();
 
     private const int CameraMinValue = 5;
     private const int CameraMaxValue = 70;
@@ -173,6 +176,8 @@ public class PlayerController : MonoBehaviour
                 break;
         }
         SetRadius(tVol < minSize ? minSize : tVol);
+        
+        sizeChanged.Invoke();
     }
 
     public void AddGrowthRate(float val)
