@@ -789,6 +789,10 @@ PrefabInstance:
       value: 0.020141602
       objectReference: {fileID: 0}
     - target: {fileID: 1365097988820540918, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365097988820540918, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
       propertyPath: m_LocalPosition.z
       value: -12.641357
       objectReference: {fileID: 0}
@@ -848,16 +852,16 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 2222697709648381307}
-    m_RemovedComponents: []
+    - target: {fileID: 4212835258933916241, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
+      propertyPath: attenuationObject
+      value: 
+      objectReference: {fileID: 3887168725208840802}
+    m_RemovedComponents:
+    - {fileID: 4212835258933916241, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
 --- !u!4 &550807582813809903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1365097988855070123, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
-  m_PrefabInstance: {fileID: 1537154602191491396}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &550807582915464373 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1365097988820540913, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
   m_PrefabInstance: {fileID: 1537154602191491396}
   m_PrefabAsset: {fileID: 0}
 --- !u!20 &550807582915464371 stripped
@@ -876,17 +880,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1524179838108300662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 550807582915464373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 3887168725208840802}
-  ListenerNumber: -1

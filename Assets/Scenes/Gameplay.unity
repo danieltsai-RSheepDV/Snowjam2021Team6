@@ -279,6 +279,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 833039036182681474, guid: 0d5fb9a1a7b1e7b4589b1dfb76554f79, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1600
+      objectReference: {fileID: 0}
+    - target: {fileID: 833039036182681474, guid: 0d5fb9a1a7b1e7b4589b1dfb76554f79, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 1870813880076182385, guid: 0d5fb9a1a7b1e7b4589b1dfb76554f79, type: 3}
       propertyPath: m_Name
       value: PauseMenu
