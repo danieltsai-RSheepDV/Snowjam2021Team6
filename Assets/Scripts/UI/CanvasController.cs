@@ -18,6 +18,7 @@ public class CanvasController : MonoBehaviour
     // Displays the menu
     public void ToggleMenu()
     {
+        // Debug.Log("toggling");
         menu.SetActive(true);
         options.SetActive(false);
     }
