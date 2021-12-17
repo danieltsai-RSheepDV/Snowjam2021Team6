@@ -21,10 +21,12 @@ public class BossFightScript : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player")) {
             // Modify game state, usually the player ->
-            for (int i = 1; i < 7; i++) {
-                GameObject targetFB = GameObject.Find(childBaseString + i.ToString()).gameObject;
-                targetFB.GetComponent<MeshRenderer>().enabled = true;
-                targetFB.GetComponent<SphereCollider>().enabled = true;
+            for (int i = 1; i < 100; i++) {
+                GameObject targetFB = GameObject.Find(childBaseString + i.ToString());
+                if (targetFB != null) {
+                    targetFB.GetComponent<MeshRenderer>().enabled = true;
+                    targetFB.GetComponent<SphereCollider>().enabled = true;
+                }
             }
             // Done with object
             // But don't destroy to avoid destroying children
