@@ -9,19 +9,19 @@ public class StickyController : MonoBehaviour
 {
     private PlayerController playerController;
     private List<KeyValuePair<StickableObject, float>> objects = new List<KeyValuePair<StickableObject, float>>();
-
+    
     // Start is called before the first frame update
     void Start()
     {
         playerController = GetComponent<PlayerController>();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         
     }
-
+    
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.GetComponent<StickableObject>() != null)
@@ -38,8 +38,8 @@ public class StickyController : MonoBehaviour
             }
         }
     }
-
-    public void dropObjects()
+    
+    public void DropObjects()
     {
         foreach(var val in objects.ToList())
         {
@@ -47,7 +47,7 @@ public class StickyController : MonoBehaviour
             {
                 val.Key.enableObject(playerController.transform);
                 val.Key.transform.parent = null;
-
+                
                 objects.Remove(val);
                 Debug.Log(objects.Count);
             }
