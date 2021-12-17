@@ -170,6 +170,7 @@ public class PlayerController : MonoBehaviour
         {
             case SnowballSize.LARGE:
                 minSize = largeTreshold;
+                vcam.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = 50;
                 break;
             case SnowballSize.MEDIUM:
                 minSize = mediumTreshold;
