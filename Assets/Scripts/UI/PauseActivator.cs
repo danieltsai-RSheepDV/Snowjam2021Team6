@@ -32,13 +32,9 @@ public class PauseActivator : MonoBehaviour
         }
     }
 
-    public void OnCancel()
-    {
-        unpauseGame();
-    }
-
     public void unpauseGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         pauseUI.SetActive(false);
         paused = false;
         Time.timeScale = 1;
@@ -46,6 +42,7 @@ public class PauseActivator : MonoBehaviour
 
     public void pauseGame()
     {
+        Cursor.lockState = CursorLockMode.None;
         pauseUI.SetActive(true);
         paused = true;
         Time.timeScale = 0;
