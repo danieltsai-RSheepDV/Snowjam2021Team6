@@ -10,8 +10,11 @@ public class StickableObject : MonoBehaviour
 {
     public float radiusLimit;
     public float volume;
-    
+
+    private bool limitPassed = false;
+    private bool disabled = false;
     private ParticleSystem particleSystem;
+    private PlayerController playerController;
     
     // Start is called before the first frame update
     void Start()
@@ -31,19 +34,33 @@ public class StickableObject : MonoBehaviour
         sh.meshRenderer = GetComponent<MeshRenderer>();
         sh.scale = Vector3.one * 1.2f;
         var rd = particleSystem.GetComponent<ParticleSystemRenderer>();
-        rd.material = GameObject.FindWithTag("Sparkles").GetComponent<Material>();
-    }
+        rd.material = GameObject.FindWithTag("Sparkles").GetComponent<Renderer>().material;
 
+        playerController = GameObject.Find("Snowball").GetComponent<PlayerController>();
+        playerController.sizeChanged.AddListener(checkSize);
+
+        particleSystem.Stop();
+    }
+    
     // Update is called once per frame
     void Update()
     {
         
     }
 
+    private void checkSize()
+    {
+        limitPassed = playerController.GetRadius() > radiusLimit;
+        if(limitPassed && !disabled) particleSystem.Play();
+        else particleSystem.Stop();
+    }
+    
     public void disableObject()
     {
         Destroy(GetComponent<Rigidbody>());
         gameObject.GetComponent<Collider>().enabled = false;
+
+        disabled = true;
     }
     
     public void enableObject(Transform t)
@@ -54,5 +71,7 @@ public class StickableObject : MonoBehaviour
         
         double d = Random.Range(0f, 360f);
         gameObject.GetComponent<Rigidbody>().velocity = new Vector3((float) Math.Cos(d), 1f, (float) Math.Sin(d)) * gameObject.transform.localPosition.magnitude;
+
+        disabled = false;
     }
 }
