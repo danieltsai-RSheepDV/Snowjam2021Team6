@@ -1,5 +1,5 @@
 {
-    "name": "Winter 2021 Jam - Prototype",
+    "name": "Snowjam2021Team6",
     "maps": [
         {
             "name": "Player",
@@ -124,6 +124,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a414f1a9-8b38-42df-8b1d-814f11636a1c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ShootDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3e550627-3ca3-42ba-92aa-ffe20a03badc",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "Press(behavior=1)",
@@ -173,6 +184,17 @@
                     "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "XR",
+                    "action": "ShootUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e1343acc-8cc0-4189-8b67-cebdf0252765",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "ShootUp",
                     "isComposite": false,
                     "isPartOfComposite": false

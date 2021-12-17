@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     private const int CameraMinValue = 5;
     private const int CameraMaxValue = 70;
 
-    private const float mediumTreshold = 300f;
-    private const float largeTreshold = 2000f;
+    private const float mediumTreshold = 10f;
+    private const float largeTreshold = 300f;
 
     private bool isGrounded;
     private bool canJump = true;
@@ -173,6 +173,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case SnowballSize.MEDIUM:
                 minSize = mediumTreshold;
+                
                 break;
         }
         SetRadius(tVol < minSize ? minSize : tVol);
@@ -183,7 +184,7 @@ public class PlayerController : MonoBehaviour
     public void AddGrowthRate(float val)
     {
         growthRate += val;
-        growthRate = Mathf.Clamp(growthRate, 0f, maxGrowthRate);
+        growthRate = Mathf.Clamp(growthRate, growthValue * 0.1f, maxGrowthRate);
     }
 
     public SnowballSize getSnowballSize()
