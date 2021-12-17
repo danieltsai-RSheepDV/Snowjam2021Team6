@@ -676,7 +676,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8591293649716607796}
         m_TargetAssemblyTypeName: StickyController, Assembly-CSharp
-        m_MethodName: dropObjects
+        m_MethodName: DropObjects
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
