@@ -33,7 +33,7 @@ public class VolumeController : MonoBehaviour
         
         
         slider = GetComponent<Slider>();
-        slider.value = volume;
+        slider.value = Mathf.Pow(volume, 0.25f);
     }
 
     public void UpdateMusicVolume()
