@@ -19,4 +19,20 @@ public class CollisionReporter : MonoBehaviour
             listener.OnCollisionExit(collision);
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        foreach (var listener in listeners)
+        {
+            listener.OnTriggerEnter(other);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        foreach (var listener in listeners)
+        {
+            listener.OnTriggerExit(other);
+        }
+    }
 }
