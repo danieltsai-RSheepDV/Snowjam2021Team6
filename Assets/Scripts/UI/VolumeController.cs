@@ -16,7 +16,7 @@ public class VolumeController : MonoBehaviour
     }
     [SerializeField] public SoundType soundType;
 
-    private void Awake()
+    private void Start()
     {
         switch (soundType)
         {
