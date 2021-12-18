@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
             
             isAiming = false;
             
-            rb.velocity = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z).normalized * (power * powerModifier);
+            rb.velocity = new Vector3(cam.transform.forward.x,  isGrounded ? -1f : 0f, cam.transform.forward.z).normalized * (power * powerModifier);
 
             vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MinValue =
                 CameraMinValue;
@@ -125,10 +125,10 @@ public class PlayerController : MonoBehaviour
                 CameraMaxValue;
         }
     }
-    
-    private void OnCollisionStay(Collision other)
+
+    private void OnTriggerStay(Collider other)
     {
-        if (other.transform.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground"))
         {
             AddRadius(growthRate * Time.deltaTime * (rb.velocity.magnitude/100f));
             
@@ -145,9 +145,9 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.transform.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
         }

@@ -26,6 +26,27 @@ public class SoundManagerSingleton : MonoBehaviour
         uiBus = FMODUnity.RuntimeManager.GetBus("bus:/UI");
     }
 
+    public static float GetMusicVolume()
+    {
+        float volume;
+        instance.musicBus.getVolume(out volume);
+        return volume;
+    }
+
+    public static float GetSFXVolume()
+    {
+        float volume;
+        instance.sfxBus.getVolume(out volume);
+        return volume;
+    }
+
+    public static float GetUIVolume()
+    {
+        float volume;
+        instance.uiBus.getVolume(out volume);
+        return volume;
+    }
+
     // Volume between 0f and 1f
     public static void SetMusicVolume(float volume)
     {
