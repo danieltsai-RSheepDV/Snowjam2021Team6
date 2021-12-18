@@ -1564,7 +1564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: bf7d541b6ddd81b4c9656fac7891c76b, type: 3}
+  m_Texture: {fileID: 2800000, guid: 03839d221bf72574cb91dd3d58f0d788, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3361,16 +3361,16 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Concept - Daniel (Yun) Tsai \nProgramming - Theodore Lau, Kyle Machnicki,
     Adam Murtagh, Daniel (Yun) Tsai, Ming Zhu\nArt - Chris Lok\nSound - Theodore
-    Lau\nShaders/Lighting - Adam Murtagh\nUI - Ming Zhu\nChorus - Theodore Lau, Chris
-    Lok, Kyle Machnicki, Adam Murtagh, Daniel (Yun) Tsai, Ming Zhu\n\nFrom the Unity
-    Asset Store: Gamemag Creation Studio, Danil Piskor\r\nOther Imported Assets:
-    QuaterniusDev, ggbot, craigsnedeker, Kenney, Miziziziz\n\nImported SFX (freesound.org)\r:
-    EminYILDIRIM\r, florianreichelt\r, InspectorJ\r, leosalom\r, Nic3_one\r, pflanigan\r,
-    Wesselorg\n\nMusic Used (YouTube)\r: \n\u201CSing along Jingle Bells, with lyrics!
-    Kids Christmas songs\u201D (Jingle Bells Backing Track) \u2014 Bounce Patrol
-    - Kids Songs\r\n\u201CTwelve Days of Christmas with Lyrics Christmas Carol &
-    Song\u201D \u2014 Christmas Songs and Carols - Love to Sing\r\n\u201Csilent night\u201D
-    \u2014 Isaac Shepard"
+    Lau\nShaders/Lighting - Adam Murtagh\nUI - Ming Zhu, Chris Lok\nChorus - Theodore
+    Lau, Chris Lok, Kyle Machnicki, Adam Murtagh, Daniel (Yun) Tsai, Ming Zhu\n\nFrom
+    the Unity Asset Store: Gamemag Creation Studio, Danil Piskor\r\nOther Imported
+    Assets: QuaterniusDev, ggbot, craigsnedeker, Kenney, Miziziziz\n\nImported SFX
+    (freesound.org)\r: EminYILDIRIM\r, florianreichelt\r, InspectorJ\r, leosalom\r,
+    Nic3_one\r, pflanigan\r, Wesselorg\n\nMusic Used (YouTube)\r: \n\u201CSing along
+    Jingle Bells, with lyrics! Kids Christmas songs\u201D (Jingle Bells Backing Track)
+    \u2014 Bounce Patrol - Kids Songs\r\n\u201CTwelve Days of Christmas with Lyrics
+    Christmas Carol & Song\u201D \u2014 Christmas Songs and Carols - Love to Sing\r\n\u201Csilent
+    night\u201D \u2014 Isaac Shepard"
 --- !u!222 &1130278096
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4192,7 +4192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1634369964}
-  orbitDistance: 150
+  orbitDistance: 500
   orbitSpeed: 0.1
 --- !u!114 &1391001301
 MonoBehaviour:
@@ -9502,7 +9502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634369963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 366, y: 20.4, z: 777}
+  m_LocalPosition: {x: 928, y: 20.4, z: 461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11087,6 +11087,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931096449}
   m_CullTransparentMesh: 1
+--- !u!1001 &1945432045
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 78702033576795532, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 78702033576795532, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 397.8719
+      objectReference: {fileID: 0}
+    - target: {fileID: 78702033576795532, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 387.00647
+      objectReference: {fileID: 0}
+    - target: {fileID: 78702033576795532, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 145.61862
+      objectReference: {fileID: 0}
+    - target: {fileID: 78702033576795532, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 78702033576795532, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 78702033576795532, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 78702033576795532, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 78702033576795532, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 78702033576795532, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 78702033576795532, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078066937480459799, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
+      propertyPath: m_Name
+      value: Map
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 600f9a80f204d28428ca71e53ccc8637, type: 3}
 --- !u!1 &1984271495
 GameObject:
   m_ObjectHideFlags: 0
