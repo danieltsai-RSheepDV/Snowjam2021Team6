@@ -7,6 +7,7 @@ public class UIDisplay : MonoBehaviour
 {
     float radius;
     Text txt;
+    [SerializeField] PlayerController player;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class UIDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        radius = player.GetRadius();
         txt.text = "Ball Radius: " + radius;
     }
 }
