@@ -77,8 +77,8 @@ public class SnowballSound : CollisionListener
     {
         if (other.transform.CompareTag("Ground"))
         {
-            Debug.Log($"{name} triggered exitted by {other.name}");
             groundCount--;
+
             if (groundCount <= 0)
             {
                 whooshSFXEmitter.Play();
