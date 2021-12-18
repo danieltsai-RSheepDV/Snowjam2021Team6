@@ -3348,7 +3348,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 76f7a113ec871444f9c26541098b18f9, type: 3}
-    m_FontSize: 38
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3359,15 +3359,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Concept - Daniel (Yun) Tsai \nProgramming - Kyle Machnicki, Adam Murtagh,
-    Theodore Lau, Daniel (Yun) Tsai, Ming Zhu\nArt - Chris Lok\nSound - Theodore
-    Lau\nShaders/Lighting - Adam Murtagh\nUI - Ming Zhu\n\nImported SFX (freesound.org)\r:
-    EminYILDIRIM\r, florianreichelt\r, InspectorJ\r, leosalom\r, Nic3_one\r, pflanigan\r,
-    Wesselorg\n\nMusic Used (YouTube)\r: \n\u201CSing along Jingle Bells, with lyrics!
-    Kids Christmas songs\u201D (Jingle Bells Backing Track) \u2014 Bounce Patrol
-    - Kids Songs\r\n\u201CTwelve Days of Christmas with Lyrics Christmas Carol &
-    Song\u201D \u2014 Christmas Songs and Carols - Love to Sing\r\n\u201Csilent night\u201D
-    \u2014 Isaac Shepard"
+  m_Text: "Concept - Daniel (Yun) Tsai \nProgramming - Theodore Lau, Kyle Machnicki,
+    Adam Murtagh, Daniel (Yun) Tsai, Ming Zhu\nArt - Chris Lok\nSound - Theodore
+    Lau\nShaders/Lighting - Adam Murtagh\nUI - Ming Zhu\nChorus - Theodore Lau, Chris
+    Lok, Kyle Machnicki, Adam Murtagh, Daniel (Yun) Tsai, Ming Zhu\n\nImported SFX
+    (freesound.org)\r: EminYILDIRIM\r, florianreichelt\r, InspectorJ\r, leosalom\r,
+    Nic3_one\r, pflanigan\r, Wesselorg\n\nMusic Used (YouTube)\r: \n\u201CSing along
+    Jingle Bells, with lyrics! Kids Christmas songs\u201D (Jingle Bells Backing Track)
+    \u2014 Bounce Patrol - Kids Songs\r\n\u201CTwelve Days of Christmas with Lyrics
+    Christmas Carol & Song\u201D \u2014 Christmas Songs and Carols - Love to Sing\r\n\u201Csilent
+    night\u201D \u2014 Isaac Shepard"
 --- !u!222 &1130278096
 CanvasRenderer:
   m_ObjectHideFlags: 0
