@@ -2,76 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManagerSingleton : MonoBehaviour
+public static class SoundManagerSingleton
 {
-    static SoundManagerSingleton instance;
-
-    FMOD.Studio.Bus musicBus;
-    FMOD.Studio.Bus sfxBus;
-    FMOD.Studio.Bus uiBus;
-
-    void Awake()
-    {
-        if (instance)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        musicBus = FMODUnity.RuntimeManager.GetBus("bus:/Music");
-        sfxBus = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
-        uiBus = FMODUnity.RuntimeManager.GetBus("bus:/UI");
-    }
+    static FMOD.Studio.Bus musicBus = FMODUnity.RuntimeManager.GetBus("bus:/Music");
+    static FMOD.Studio.Bus sfxBus = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
+    static FMOD.Studio.Bus uiBus = FMODUnity.RuntimeManager.GetBus("bus:/UI");
 
     public static float GetMusicVolume()
     {
         float volume;
-        instance.musicBus.getVolume(out volume);
+        musicBus.getVolume(out volume);
         return volume;
     }
 
     public static float GetSFXVolume()
     {
         float volume;
-        instance.sfxBus.getVolume(out volume);
+        sfxBus.getVolume(out volume);
         return volume;
     }
 
     public static float GetUIVolume()
     {
         float volume;
-        instance.uiBus.getVolume(out volume);
+        uiBus.getVolume(out volume);
         return volume;
     }
 
     // Volume between 0f and 1f
     public static void SetMusicVolume(float volume)
     {
-        instance.musicBus.setVolume(volume);
+        musicBus.setVolume(volume);
     }
 
     // Volume between 0f and 1f
     public static void SetSFXVolume(float volume)
     {
-        instance.sfxBus.setVolume(volume);
+        sfxBus.setVolume(volume);
     }
 
     // Volume between 0f and 1f
     public static void SetUIVolume(float volume)
     {
-        instance.uiBus.setVolume(volume);
+        uiBus.setVolume(volume);
     }
 
     public static void PauseSFX()
     {
-        instance.sfxBus.setPaused(true);
+        sfxBus.setPaused(true);
     }
 
     public static void UnpauseSFX()
     {
-        instance.sfxBus.setPaused(false);
+        sfxBus.setPaused(false);
     }
 }
