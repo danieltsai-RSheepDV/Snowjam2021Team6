@@ -293,7 +293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &833039034215260462
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3154,7 +3154,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7516503173297954472}
         m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: UpdateMusicVolume
+        m_MethodName: UpdateUIVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3349,7 +3349,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441493388697542165}
         m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: UpdateMusicVolume
+        m_MethodName: UpdateSFXVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
