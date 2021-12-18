@@ -16,7 +16,7 @@ public class UIDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        string message = "Ball Radius: " + player.GetRadius().ToString("F2") + ".";
+        string message = player.GetRadius().ToString("F2");
         txt.text = message;
     }
 }
