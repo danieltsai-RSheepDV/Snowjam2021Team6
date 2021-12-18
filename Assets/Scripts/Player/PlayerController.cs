@@ -128,12 +128,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("test");
-    }
-
-    private void OnCollisionStay(Collision other)
-    {
-        if (other.transform.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground"))
         {
             AddRadius(growthRate * Time.deltaTime * (rb.velocity.magnitude/100f));
             
@@ -150,9 +145,9 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.transform.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
         }

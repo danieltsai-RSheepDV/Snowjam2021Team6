@@ -18,6 +18,8 @@ public class SnowballSound : CollisionListener
     float soundSpeed = 0;
     float soundSpeedVelocity;
 
+    int groundCount = 0;
+
     void Awake()
     {
         rollingSFXEmitter = transform.Find("Rolling SFX").GetComponent<FMODUnity.StudioEventEmitter>();
@@ -60,7 +62,27 @@ public class SnowballSound : CollisionListener
         if (collision.transform.CompareTag("Ground"))
         {
             rollingSFXEmitter.Stop();
-            whooshSFXEmitter.Play();
+        }
+    }
+
+    public override void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag("Ground"))
+        {
+            groundCount++;
+        }
+    }
+
+    public override void OnTriggerExit(Collider other)
+    {
+        if (other.transform.CompareTag("Ground"))
+        {
+            groundCount--;
+
+            if (groundCount <= 0)
+            {
+                whooshSFXEmitter.Play();
+            }
         }
     }
 
