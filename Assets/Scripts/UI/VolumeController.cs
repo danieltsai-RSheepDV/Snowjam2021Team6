@@ -16,6 +16,17 @@ public class VolumeController : MonoBehaviour
     }
     [SerializeField] public SoundType soundType;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void OnBeforeSceneLoadRuntimeMethod()
+    {
+        if (PlayerPrefs.HasKey("musicVolume"))
+            SoundManagerSingleton.SetMusicVolume(PlayerPrefs.GetFloat("musicVolume"));
+        if (PlayerPrefs.HasKey("SFXVolume"))
+            SoundManagerSingleton.SetMusicVolume(PlayerPrefs.GetFloat("SFXVolume"));
+        if (PlayerPrefs.HasKey("UIVolume"))
+            SoundManagerSingleton.SetMusicVolume(PlayerPrefs.GetFloat("UIVolume"));
+    }
+
     private void Start()
     {
         switch (soundType)
@@ -54,9 +65,10 @@ public class VolumeController : MonoBehaviour
         SoundManagerSingleton.SetSFXVolume(Mathf.Pow(volume, 4));
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnApplicationQuit()
     {
-        
+        PlayerPrefs.SetFloat("musicVolume", SoundManagerSingleton.GetMusicVolume());
+        PlayerPrefs.SetFloat("SFXVolume", SoundManagerSingleton.GetSFXVolume());
+        PlayerPrefs.SetFloat("UIVolume", SoundManagerSingleton.GetUIVolume());
     }
 }
