@@ -23,11 +23,11 @@ public class PlayerController : MonoBehaviour
     private const float CameraInitSpeed = 0.4f;
 
     private const float mediumTreshold = 10f;
-    private const float largeTreshold = 200f;
+    private const float largeTreshold = 30f;
 
     private const float smallPowMod = 0.8f;
-    private const float mediumPowMod = 4f;
-    private const float largePowMod = 10f;
+    private const float mediumPowMod = 1.6f;
+    private const float largePowMod = 3.2f;
 
     private bool isGrounded;
     private bool canJump = true;
@@ -185,11 +185,14 @@ public class PlayerController : MonoBehaviour
             case SnowballSize.LARGE:
                 minSize = largeTreshold;
                 powerModifier = largePowMod;
+                vcam.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = 250f;
+                Physics.gravity = new Vector3(0f, -50f, 0f);
                 break;
             case SnowballSize.MEDIUM:
                 minSize = mediumTreshold;
                 powerModifier = mediumPowMod;
                 vcam.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = 150f;
+                Physics.gravity = new Vector3(0f, -30f, 0f);
                 break;
         }
         SetRadius(tVol < minSize ? minSize : tVol);
