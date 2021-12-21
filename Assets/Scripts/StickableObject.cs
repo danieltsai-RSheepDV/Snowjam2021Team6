@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(ParticleSystem))]
-
 public class StickableObject : MonoBehaviour
 {
     public float radiusLimit;
@@ -13,35 +11,38 @@ public class StickableObject : MonoBehaviour
 
     private bool limitPassed = false;
     private bool disabled = false;
-    private ParticleSystem particleSystem;
+    private GameObject particleOb;
     private PlayerController playerController;
-    private ParticleSystemRenderer rd;
     
     // Start is called before the first frame update
     void Start()
     {
-        particleSystem = GetComponent<ParticleSystem>();
-        var mn = particleSystem.main;
+        particleOb = new GameObject();
+        particleOb.transform.parent = transform;
+        particleOb.transform.localScale = Vector3.one;
+
+        ParticleSystem ps = particleOb.AddComponent<ParticleSystem>();
+        var mn = ps.main;
         mn.startLifetime = 1;
         mn.startSpeed = 0;
-        mn.startSize = 0.4f / transform.localScale.x;
-        var em = particleSystem.emission;
+        mn.startSize = 0.4f * Mathf.Pow(GetComponent<Collider>().bounds.size.magnitude, 1f/2f);
+        var em = ps.emission;
         em.enabled = true;
         em.rateOverTime = 50;
-        var sh = particleSystem.shape;
+        var sh = ps.shape;
+        sh.meshRenderer = GetComponent<MeshRenderer>();
         sh.enabled = true;
         sh.shapeType = ParticleSystemShapeType.MeshRenderer;
         sh.meshShapeType = ParticleSystemMeshShapeType.Triangle;
-        sh.meshRenderer = GetComponent<MeshRenderer>();
         sh.scale = Vector3.one * 1.2f;
-        rd = particleSystem.GetComponent<ParticleSystemRenderer>();
+        ParticleSystemRenderer rd = ps.GetComponent<ParticleSystemRenderer>();
         rd.material = GameObject.FindWithTag("Sparkles").GetComponent<Renderer>().material;
+        ps.Play();
 
         playerController = GameObject.Find("Snowball").GetComponent<PlayerController>();
         playerController.sizeChanged.AddListener(checkSize);
 
-        particleSystem.Stop();
-        
+        ps.Stop();
     }
     
     // Update is called once per frame
@@ -49,16 +50,11 @@ public class StickableObject : MonoBehaviour
     {
         if (limitPassed && !disabled)
         {
-            if (particleSystem.isStopped)
-            {
-                particleSystem.Play();
-                rd.enabled = true;
-            }
+            particleOb.SetActive(true);
         }
         else
         {
-            rd.enabled = false;
-            particleSystem.Stop();
+            particleOb.SetActive(false);
         }
     }
 
@@ -91,5 +87,18 @@ public class StickableObject : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().velocity = new Vector3((float) Math.Cos(d), 1f, (float) Math.Sin(d)) * gameObject.transform.localPosition.magnitude;
 
         disabled = false;
+    }
+    
+    Vector3 determineScale()
+    {
+ 
+        Vector3 tempScale = new Vector3(1, 1, 1);
+        Transform t = transform;
+        while (t != null)
+        {
+            tempScale = new Vector3(tempScale.x * t.localScale.x, tempScale.y * t.localScale.y, tempScale.z * t.localScale.z);
+            t = t.parent;
+        }
+        return tempScale;
     }
 }

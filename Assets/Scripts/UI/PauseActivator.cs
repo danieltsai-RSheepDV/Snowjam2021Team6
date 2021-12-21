@@ -51,7 +51,8 @@ public class PauseActivator : MonoBehaviour
     }
     public void LoadScene(string name)
     {
-        unpauseGame();
+        
+        Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(name);
     }

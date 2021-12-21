@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private const float mediumTreshold = 10f;
     private const float largeTreshold = 200f;
 
+    private const float smallPowMod = 0.8f;
     private const float mediumPowMod = 4f;
     private const float largePowMod = 10f;
 
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
     private bool canJump = true;
     private bool isAiming = false;
     private float power;
-    private float powerModifier = 1f;
+    private float powerModifier = smallPowMod;
     
     private float maxGrowthRate = 0.2f;
     private float growthRate = 1f;
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
         growthDecel = growthValue * percentageGrowthDecel;
         maxGrowthRate = percentageMaxGrowthRate * growthValue;
-        growthRate = maxGrowthRate;
+        growthRate = growthValue;
     }
     
     void Update()
@@ -117,7 +118,7 @@ public class PlayerController : MonoBehaviour
             
             isAiming = false;
             
-            rb.velocity = new Vector3(cam.transform.forward.x,  isGrounded ? -1f : 0f, cam.transform.forward.z).normalized * (power * powerModifier);
+            rb.velocity = new Vector3(cam.transform.forward.x,  0f, cam.transform.forward.z).normalized * (power * powerModifier);
 
             vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MinValue =
                 CameraMinValue;

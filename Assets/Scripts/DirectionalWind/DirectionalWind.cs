@@ -8,7 +8,7 @@ public class DirectionalWind : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.attachedRigidbody != null)
         {
             other.attachedRigidbody.AddForce(gameObject.transform.forward * windForce, ForceMode.Acceleration);
         }
