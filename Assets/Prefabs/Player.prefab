@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1854572303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1854572304}
+  m_Layer: 0
+  m_Name: Restart Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1854572304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854572303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 550807583130937403}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1977669999
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +142,7 @@ Transform:
   - {fileID: 2222697709648381307}
   - {fileID: 550807582813809903}
   - {fileID: 1977670000}
+  - {fileID: 1854572304}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -526,6 +557,7 @@ MonoBehaviour:
   vcam: {fileID: 550807583021131019}
   cam: {fileID: 550807582915464371}
   model: {fileID: 2941509306874744695}
+  restartPoint: {fileID: 1854572304}
   growthValue: 0.2
   percentageGrowthDecel: 0.2
   percentageMaxGrowthRate: 10
@@ -538,7 +570,7 @@ Rigidbody:
   m_GameObject: {fileID: 3887168725208840802}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0.2
+  m_Drag: 0.5
   m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -801,7 +833,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1365097988820540918, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.020141602
+      value: -0.0000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 1365097988820540918, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -809,7 +841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1365097988820540918, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.641357
+      value: -19.999985
       objectReference: {fileID: 0}
     - target: {fileID: 1365097988855070123, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
       propertyPath: m_RootOrder
@@ -858,6 +890,14 @@ PrefabInstance:
     - target: {fileID: 1365097988855070132, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
       propertyPath: m_Name
       value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365097989200933966, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365097989200933966, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19.999985
       objectReference: {fileID: 0}
     - target: {fileID: 1365097989200933967, guid: 5c8f60b552ecde04facfc46ecea9650f, type: 3}
       propertyPath: m_Follow

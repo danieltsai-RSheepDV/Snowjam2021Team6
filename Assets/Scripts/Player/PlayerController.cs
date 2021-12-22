@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera vcam;
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject model;
+    [SerializeField] private Transform restartPoint;
     
     public float growthValue = 0.1f;
     [SerializeField] private float percentageGrowthDecel = 0.1f;
@@ -152,6 +153,12 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    private void OnRestart()
+    {
+        Debug.Log("test");
+        transform.position = restartPoint.position;
     }
 
     //Methods

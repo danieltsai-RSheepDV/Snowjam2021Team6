@@ -18,6 +18,8 @@ public class SnowballSound : CollisionListener
     float soundSpeed = 0;
     float soundSpeedVelocity;
 
+    private bool inAir = true;
+
     int groundCount = 0;
 
     void Awake()
@@ -48,12 +50,19 @@ public class SnowballSound : CollisionListener
 
     public override void OnCollisionEnter(Collision collision)
     {
-        hitSFXEmitter.Play();
+        if (inAir)
+        {
+            hitSFXEmitter.Play();
+        }
 
         if (collision.transform.CompareTag("Ground"))
         {
-            rollingSFXEmitter.Play();
-            rollingSFXEmitter.SetParameter("Speed", soundSpeed);
+            if (inAir)
+            {
+                rollingSFXEmitter.Play();
+                rollingSFXEmitter.SetParameter("Speed", soundSpeed);
+            }
+            inAir = false;
         }
     }
 
@@ -61,7 +70,7 @@ public class SnowballSound : CollisionListener
     {
         if (collision.transform.CompareTag("Ground"))
         {
-            rollingSFXEmitter.Stop();
+            
         }
     }
 
@@ -75,6 +84,8 @@ public class SnowballSound : CollisionListener
 
     public override void OnTriggerExit(Collider other)
     {
+        
+        inAir = true;
         if (other.transform.CompareTag("Ground"))
         {
             groundCount--;
@@ -82,6 +93,7 @@ public class SnowballSound : CollisionListener
             if (groundCount <= 0)
             {
                 whooshSFXEmitter.Play();
+                rollingSFXEmitter.Stop();
             }
         }
     }
@@ -90,4 +102,6 @@ public class SnowballSound : CollisionListener
     {
         powerUpSFXEmitter.Play();
     }
+    
+    
 }
