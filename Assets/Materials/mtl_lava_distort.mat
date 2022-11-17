@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: mtl_lava_distort
   m_Shader: {fileID: 4800000, guid: 6a151f652f5ba03458e9a7cd03ae88e8, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -30,7 +31,7 @@ Material:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 348fa4d278c53ad4dacd07df1e63a248, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 53.618942, y: 0}
+        m_Offset: {x: 5.263108, y: 0}
     - _MainTex2:
         m_Texture: {fileID: 2800000, guid: bef54341b6d21864c82d47f3bed4c7db, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -39,6 +40,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: 1a5d8cd24a805cd44b00c7f1e1e4d287, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 1.5691679, y: 0}
+    m_Ints: []
     m_Floats:
     - _Displacement: 0.0375
     - _DistortX: 1.0714285
